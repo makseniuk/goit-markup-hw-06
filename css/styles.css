@@ -58,6 +58,7 @@ img {
 /* header */
 
 .header {
+    padding: 17.5px 0;
     border-bottom: 1px solid #e7e9fc;
     box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
         0px 1px 1px rgba(46, 47, 66, 0.16),
@@ -94,10 +95,6 @@ img {
         line-height: 1.17;
         letter-spacing: 0.03em;
         text-transform: uppercase;
-}
-
-.logo{
-    margin-right: 76px;
 }
 
 .header-list{
@@ -170,21 +167,25 @@ color: #404bbf;
 .menu-header-btn{
     background-color: transparent;
     border: none;
-    margin: 0 auto;
+    margin-left: auto;
 }
 
 .mob-menu{
-    padding: 0 16px;
+    padding: 24px 24px 525px 16px;
     position: fixed;
     left: 0;
     top: 0;
     z-index: 1;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: #F4F4FD;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: auto;
 }
 
 .menu-close-btn{
+    display: block;
     border-radius: 50%;
     width: 24px;
     height: 24px;
@@ -222,6 +223,10 @@ color: #404bbf;
     fill: #ffffff;
 }
 
+.menu-nav{
+    margin-bottom: auto;
+}
+
 .mob-menu-list{
     display: flex;
     flex-direction: column;
@@ -231,7 +236,6 @@ color: #404bbf;
 
 .mob-items-link {
     display: block;
-    padding: 24px 0;
     color: #2E2F42;
     font-size: 36px;
     font-weight: 700;
@@ -284,7 +288,6 @@ color: #404bbf;
 
 .mob-icons-list{
     display: flex;
-    justify-content: center;
     gap: 40px;
 }
 
@@ -336,19 +339,19 @@ color: #404bbf;
 
 @media (min-resolution: 192dpi) and (min-width:320px){
     .solution{
-        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/bg-mob-x1.jpg), url(../images/bg-mob-x2.jpg);
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/bg-mob-x2.jpg), url(../images/bg-mob-x1.jpg);
     }
 }
 
 @media (min-resolution: 192dpi) and (min-width:768px) {
     .solution {
-        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/bg-tab-x1.jpg), url(../images/bg-tab-x2.jpg);
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/bg-tab-x2.jpg), url(../images/bg-tab-x1.jpg);
     }
 }
 
 @media (min-resolution: 192dpi) and (min-width:1158px) {
     .solution {
-        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/bg-desk-x1.jpg,), url(../images/bg-desk-x2.jpg);
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/bg-desk-x2.jpg,), url(../images/bg-desk-x1.jpg);
     }
 }
 
@@ -357,6 +360,7 @@ color: #404bbf;
     margin-left: auto;
     margin-bottom: 72px;
     max-width: 288px;
+    height: 160px;
     color: #FFFFFF;
         font-size: 36px;
         font-weight: 700;
@@ -368,7 +372,6 @@ color: #404bbf;
 .solution-btn {
     margin-right: auto;
     margin-left: auto;
-    margin-bottom: 72px;
     font-family: "Roboto", sans-serif;
     color: #ffffff;
     font-size: 16px;
@@ -429,6 +432,7 @@ background-color: #404BBF;
 }
 
 .list-title {
+    text-align: center;
     margin-bottom: 8px;
     color :#2E2F42;
         font-size: 36px;
@@ -575,7 +579,13 @@ background-color: #404BBF;
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.portfolio-picture{
+    flex-shrink: 0;
+}
+
 .portfolio-div-img{
+    max-width: 100%;
+    height: auto;
     position: relative;
     overflow: hidden;
 }
@@ -607,6 +617,7 @@ background-color: #404BBF;
 
 
 .portfolio-card-div{
+    margin-bottom: 48px;
     padding: 32px 16px;
     border: 1px solid #e7e9fc;
     border-top: none;
@@ -688,7 +699,6 @@ color: #4D5AE5;
     display: flex;
     gap: 16px;
     margin-bottom: 72px;
-    margin-left: 35px;
 }
 
 .footer-icons-items{
@@ -719,6 +729,7 @@ color: #4D5AE5;
 }
 
 .footer-form-title{
+    margin-left: 93px;
     margin-bottom: 16px;
     width: 75px;
     height: 24px;
@@ -750,7 +761,7 @@ color: #4D5AE5;
 }
 
 .footer-input::placeholder{
-    color: #ffffff
+    color: #ffffff;
 }
 
 .footer-form-btn{
@@ -788,10 +799,19 @@ color: #4D5AE5;
     left: 0;
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: auto;
+}
+
+.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
 .modal{
-    width: 255px;
+    width: 288px;
     min-height: 623px;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
         0px 1px 3px rgba(0, 0, 0, 0.12),
@@ -998,6 +1018,27 @@ border: 1px solid rgba(46, 47, 66, 0.4);
     .container{
         max-width: 768px;
     }
+    .header{
+        padding: 25.5px 16px 0 16px;
+    }
+
+    .header-list {
+        display: flex;
+    }
+
+    .adress-list{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .menu-header-btn{
+        display: none;
+    }
+
+    .mob-menu{
+        display: none;
+    }
 
     .solution{
         padding: 112px 0;
@@ -1030,7 +1071,7 @@ border: 1px solid rgba(46, 47, 66, 0.4);
     }
 
     .list-team{
-        max-width: 100%;
+        width: 584px;
         gap: 64px 24px;
         margin: 0 auto;
     }
@@ -1057,8 +1098,20 @@ border: 1px solid rgba(46, 47, 66, 0.4);
         width: calc((100% - 24px) / 2);
     }
 
-    .footer-icons-list{
-        margin-right: 24px;
+    .footer-div{
+        width: 584px;
+    }
+
+    .footer-logo{
+        margin-left: 0;
+    }
+
+    .footer-icons-text{
+        margin-left: 0;
+    }
+
+    .footer-form-title{
+        margin-left: 0;
     }
 
     .modal{
@@ -1081,6 +1134,10 @@ border: 1px solid rgba(46, 47, 66, 0.4);
     .container{
         max-width: 1158px;
         padding: 0 15px;
+    }
+
+    .logo {
+        margin-right: 76px;
     }
 
     .header-list{
@@ -1154,6 +1211,10 @@ border: 1px solid rgba(46, 47, 66, 0.4);
         padding: 120px 0 120px 0;
     }
 
+    .footer-div{
+        width: 100%;
+    }
+
     .portfolio-list{
         column-gap: 24px;
         row-gap: 48px;
@@ -1165,7 +1226,7 @@ border: 1px solid rgba(46, 47, 66, 0.4);
     }
     
     .footer{
-        padding: 100px;
+        padding: 100px 0;
     }
 
     .footer-div{
@@ -1174,6 +1235,7 @@ border: 1px solid rgba(46, 47, 66, 0.4);
 
     .logo-text-footer {
         margin-right: 120px;
+        margin-bottom: 0;
     }
 
     .footer-text{
@@ -1181,7 +1243,6 @@ border: 1px solid rgba(46, 47, 66, 0.4);
     }
 
     .footer-icons-list{
-        margin-right: 80px;
         margin-bottom: 0;
     }
 
